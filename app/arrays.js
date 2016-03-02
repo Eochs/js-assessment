@@ -19,15 +19,22 @@ exports.arraysAnswers = {
   remove : function(arr, item) {
     return arr.filter(function(elem){
       return (elem === item) ? false : true;
-    })
+    });
   },
 
   removeWithoutCopy : function(arr, item) {
-
+    var n = arr.length;
+    for (var i = 0; i < n; i++){
+      if (arr[i] === item) {
+        arr.splice(i, 1);
+        i--;
+      }
+    }
+    return arr;
   },
 
   append : function(arr, item) {
-
+    return arr.concat(item);
   },
 
   truncate : function(arr) {
