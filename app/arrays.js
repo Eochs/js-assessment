@@ -64,7 +64,15 @@ exports.arraysAnswers = {
   },
 
   duplicates : function(arr) {
-
+    var dups = [];
+    var counts = {};
+    arr.sort().forEach(function(elem){
+      counts[elem] = (elem in counts) ? counts[elem]+1 : 1;
+      if (counts[elem] === 2) {
+        dups.push(elem);
+      }
+    });
+    return dups;
   },
 
   square : function(arr) {
