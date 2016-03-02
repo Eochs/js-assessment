@@ -46,19 +46,21 @@ exports.arraysAnswers = {
   },
 
   curtail : function(arr) {
-
+    return arr.slice(1);
   },
 
   concat : function(arr1, arr2) {
-
+    return arr1.concat(arr2);
   },
 
   insert : function(arr, item, index) {
-
+    return arr.slice(0,index).concat(item).concat(arr.slice(index));
   },
 
   count : function(arr, item) {
-
+    return arr.reduce(function(acc, elem){
+      return (elem === item) ? acc + 1 : acc;
+    }, 0);
   },
 
   duplicates : function(arr) {
