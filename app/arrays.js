@@ -38,11 +38,11 @@ exports.arraysAnswers = {
   },
 
   truncate : function(arr) {
-
+    return arr.slice(0,-1);
   },
 
   prepend : function(arr, item) {
-
+    return [].concat(item).concat(arr);
   },
 
   curtail : function(arr) {
