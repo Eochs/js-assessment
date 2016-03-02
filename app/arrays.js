@@ -17,7 +17,9 @@ exports.arraysAnswers = {
   },
 
   remove : function(arr, item) {
-
+    return arr.filter(function(elem){
+      return (elem === item) ? false : true;
+    })
   },
 
   removeWithoutCopy : function(arr, item) {
