@@ -58,9 +58,7 @@ exports.arraysAnswers = {
   },
 
   count : function(arr, item) {
-    return arr.reduce(function(acc, elem){
-      return (elem === item) ? acc + 1 : acc;
-    }, 0);
+    return arr.reduce((acc, elem) => (elem === item) ? acc + 1 : acc, 0);
   },
 
   duplicates : function(arr) {
@@ -76,10 +74,15 @@ exports.arraysAnswers = {
   },
 
   square : function(arr) {
-
+    //return arr.map(function(elem){return elem*elem;});
+    return arr.map(elem => elem*elem);
   },
 
   findAllOccurrences : function(arr, target) {
-
+    var indices = [];
+    for (var i = 0; i < arr.length; i++){
+      if (arr[i] === target) indices.push(i);
+    }
+    return indices;
   }
 };
